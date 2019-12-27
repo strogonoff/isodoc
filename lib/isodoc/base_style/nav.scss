@@ -1,6 +1,9 @@
 @import 'defaults';
 
-@mixin toc($colorLink, $colorLinkActiveBg, $colorLinkActiveFg) {
+@mixin toc($colorLink, $colorLinkActiveBg, $colorLinkActiveFg, $font: $bodyfont, $fontWeight: 400) {
+  font-family: $font;
+  font-weight: $fontWeight;
+
   ul {
     margin: 0;
     padding: 0;
@@ -39,6 +42,11 @@
     }
   }
 
+  @media screen and (max-width: $bigscreenBreakpoint) {
+    padding: 0 1.5em;
+    overflow: visible;
+  }
+
   @media print {
     .toc-active, li:hover {
       background: white;
@@ -64,16 +72,6 @@
 
   @media print {
     padding-left: 0;
-  }
-}
-
-@mixin sidebarToc($font: $bodyfont, $fontWeight: 400) {
-  font-family: $font;
-  font-weight: $fontWeight;
-
-  @media screen and (max-width: $bigscreenBreakpoint) {
-    padding: 0 1.5em;
-    overflow: visible;
   }
 }
 
