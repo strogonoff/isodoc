@@ -1,6 +1,9 @@
 @import 'defaults';
 
 @mixin sidebarToc($font: $bodyfont, $fontWeight: 400) {
+  // DEPRECATED: #toc selector is unique and is always nested within <nav>.
+  // Use basic toc() mixin.
+
   font-family: $font;
   font-weight: $fontWeight;
 
