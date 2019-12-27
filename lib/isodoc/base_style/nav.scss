@@ -67,7 +67,7 @@
   }
 }
 
-@mixin sidebarNavContainer($offset) {
+@mixin responsiveNavContainer($offset) {
   // Expected to be applied to body.
 
   @media screen and (min-width: $bigscreenBreakpoint) {
@@ -77,6 +77,11 @@
   @media print {
     padding-left: 0;
   }
+}
+
+@mixin sidebarNavContainer($offset) {
+  // DEPRECATED: Use responsiveNavContainer() mixin.
+  @include sidebarNavContainer($offset);
 }
 
 @mixin responsiveNav(
@@ -113,10 +118,11 @@
 }
 
 @mixin sidebarNav($args...) {
+  // DEPRECATED: Use responsiveNav() mixin.
   @include reponsiveNav($args...);
 }
 
-@mixin sidebarNavToggle($colorFg: white, $colorBg: black) {
+@mixin responsiveNavToggle($colorFg: white, $colorBg: black) {
   @media screen and (min-width: $bigscreenBreakpoint) {
     position: fixed;
     height: 100%;
@@ -142,6 +148,11 @@
   @media print {
     display: none;
   }
+}
+
+@mixin sidebarNavToggle($colorFg: white, $colorBg: black) {
+  // DEPRECATED: Use responsiveNavToggle() mixin.
+  @include responsiveNavToggle($colorFg, $colorBg);
 }
 
 @mixin tocSeparator {
