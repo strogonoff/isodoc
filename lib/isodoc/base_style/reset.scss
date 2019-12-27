@@ -64,16 +64,6 @@ time, mark, audio, video {
   font-family: $bodyfont;
 }
 
-code, pre, tt, kbd, samp {
-  font-family: $monospacefont;
-  font-variant-ligatures: none;
-
-  * {
-    font-family: $monospacefont !important;
-    font-variant-ligatures: none;
-  }
-}
-
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -82,17 +72,4 @@ footer, header, hgroup, menu, nav, section {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $headerfont;
-}
-
-blockquote, q {
-  quotes: none;
-
-  &:before, &:after {
-    content: '';
-    content: none;
-  }
 }
