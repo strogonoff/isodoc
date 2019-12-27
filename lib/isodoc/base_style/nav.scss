@@ -1,8 +1,17 @@
 @import 'defaults';
 
-@mixin toc($colorLink, $colorLinkActiveBg, $colorLinkActiveFg, $font: $bodyfont, $fontWeight: 400) {
+@mixin sidebarToc($font: $bodyfont, $fontWeight: 400) {
   font-family: $font;
   font-weight: $fontWeight;
+
+  @media screen and (max-width: $bigscreenBreakpoint) {
+    padding: 0 1.5em;
+    overflow: visible;
+  }
+}
+
+@mixin toc($colorLink, $colorLinkActiveBg, $colorLinkActiveFg, $font: $bodyfont, $fontWeight: 400) {
+  @include sidebarToc($font, $fontWeight);
 
   ul {
     margin: 0;
@@ -40,11 +49,6 @@
     a {
       color: $colorLinkActiveFg;
     }
-  }
-
-  @media screen and (max-width: $bigscreenBreakpoint) {
-    padding: 0 1.5em;
-    overflow: visible;
   }
 
   @media print {
@@ -106,6 +110,10 @@
     margin-right: 0;
     background-color: white;
   }
+}
+
+@mixin sidebarNav($args...) {
+  @include reponsiveNav($args...);
 }
 
 @mixin sidebarNavToggle($colorFg: white, $colorBg: black) {
